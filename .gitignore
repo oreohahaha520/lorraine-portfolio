@@ -1,0 +1,14 @@
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# Node (未來可能會用到)
+node_modules/
+
+# Log files
+*.log
