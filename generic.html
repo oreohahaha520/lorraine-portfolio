@@ -44,12 +44,48 @@
 								<header class="major">
 									<span class="date">Master Thesis</span>
 									<h1>01</h1>
-									<h3>Safer-RoBIM<br />
-									整合 BIM 與數位孿生之智慧型自主移動機器人系統</h3>
-									<p>Aenean ornare velit lacus varius enim ullamcorper proin aliquam<br />
-									facilisis ante sed etiam magna interdum congue. Lorem ipsum dolor<br />
-									amet nullam sed etiam veroeros.</p>
+									<h2>Safer-RoBIM<br />
+									整合 BIM 與數位孿生之智慧型自主移動機器人系統</h2>
 								</header>
+								<div class="about-me">
+									<p>本研究旨在針對現有建築設施管理（FM）階段所面臨的高人力成本、系統韌性不足與能源管理效率瓶頸，開發並驗證一套融合BIM-SLAM、Edge AI與結合多感測器的自主移動機器人（Autonomous Mobile Robot,
+									AMR）之智慧巡檢系統原型，實現高精度空間認知、自主智慧判斷與實務運用整合。
+									</p>
+
+									<p>	
+										在方法設計上，研究建立一套 ROS 2為技術骨幹的系統架構，以AMR載具、Jetson Orin Nano邊緣運算裝置與多種感測器為載具，依序完成自主巡檢、危險事件偵測，最後於BIM平台整合三個層次的實作流程。系統中同時發展事件級偵測模型與決策機制，將偵測到的風險事件轉為具座標與時間標記的資訊，再疊加於數位孿生模型中，並透過告警郵件等方式推送給維運人員。
+									</p>
+									<p>
+										研究驗證部分透過PoC小型場域與正式實驗場域的多次腳本化巡檢任務，蒐集事件級資料與偵測結果，運用混淆矩陣與多項評估指標檢視系統效能與不同類別危險徵兆的表現。最終整合量化結果與前端數位孿生成果，說明SAFER-RoBIM在提升建築營運維護階段安全監測效率與風險可視化方面的貢獻，並據此提出後續實場部署與系統擴充的發展方向。
+									</p>
+								</div>
+								<h2 class="section-title">Research Issue</h2>
+								
+								<div class="four-grid bordered-grid">
+									<div class="grid-item">
+										<h3>人工巡檢的警報疲勞</h3>
+										<p>Multi-layer communication framework</p>
+									</div>
+								
+									<div class="grid-item">
+										<h3>維運環境變動性高</h3>
+										<p>YOLOv11 + TensorRT deployment</p>
+									</div>
+								
+									<div class="grid-item">
+										<h3>靜態BIM的非即時性 </h3>
+										<p>Real-time spatial synchronization</p>
+									</div>
+								
+									<div class="grid-item">
+										<h3>Risk Visualization</h3>
+										<p>3D hazard mapping & alerts</p>
+									</div>
+								</div>
+								<h4 class="figure">
+									SAFER-RoBIM Architecture<br>
+									三階段智慧檢測流程
+								</h4>
 								<div class="image main"><img src="images/研究方法架構(new)(EN)-01.jpg" alt="" /></div>
 								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
 								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
