@@ -63,46 +63,59 @@
 								
 								<div class="four-grid bordered-grid">
 									<div class="grid-item">
-										<h3>人工巡檢的警報疲勞</h3>
-										<p>Multi-layer communication framework</p>
+										<h1>人工巡檢</h1>
+										<h4>警報疲勞、巡檢盲區</h4>
 									</div>
 								
 									<div class="grid-item">
-										<h3>維運環境變動性高</h3>
-										<p>YOLOv11 + TensorRT deployment</p>
+										<h1>維運環境</h1>
+										<h4>複雜且變動性高</h4>
 									</div>
 								
 									<div class="grid-item">
-										<h3>靜態BIM的非即時性 </h3>
-										<p>Real-time spatial synchronization</p>
+										<h1>靜態BIM</h1>
+										<h4>非即時性導致延遲</h4>
 									</div>
 								
 									<div class="grid-item">
-										<h3>Risk Visualization</h3>
-										<p>3D hazard mapping & alerts</p>
+										<h1>危險事件</h1>
+										<h4>缺乏日常分層分級考量</h4>
 									</div>
 								</div>
-								<h4 class="figure">
-									SAFER-RoBIM Architecture<br>
-									三階段智慧檢測流程
-								</h4>
+								<h2 class="section-title">
+									SAFER-RoBIM Architecture
+									<span>三階段智慧檢測流程</span>
+								</h2>
+
 								<div class="image main"><img src="images/研究方法架構(new)(EN)-01.jpg" alt="" /></div>
-								<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Curabitur sapien risus, commodo eget turpis at, elementum convallis enim turpis, lorem ipsum dolor sit amet nullam.</p>
-								<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus. Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum.</p>
+								<h4 class="phase-label">Phase 1 — Perception & Navigation</h4>
+								<h5 class="about-me">感測器與馬達整合 : AMR搭載2D LiDAR與RGB-D相機等感測器，結合底盤馬達系統與SLAM演算法，於室內環境中執行自主導航並持續蒐集環境資訊。此階段主要產出為 ROS 2中的定位資訊與感測到的事件狀態，作為後續危險偵測與前端呈現之基礎。</h5>
+								
+								<h4 class="phase-label">Phase 2 — Object Detection</h4>
+								<h5 class="about-me">基於室內危險之物件偵測 : AMR所回傳之影像首先輸入YOLO物件偵測模型進行推論，經由後處理與危險分類模組後，將偵測結果對應至本研究定義之危險腳本等級，並輸出標註好之偵測結果。此階段因此扮演「由感測影像轉譯為語意化危險事件」的角色。</h5>
+
+								<h4 class="phase-label">Phase 3 — Frontend Integration & Visualization</h4>
+								<h5 class="about-me">Phase 3「前端整合與可視化」 則著重於將 ROS 2 端的資料串接至雲端平台與使用者介面。本研究使用ROS Bridge將 ROS
+								2座標與事件資料轉為Websocket流，供前端應用程式即時訂閱。前端一方面在APS平台上以BIM模型為背景，顯示AMR 當前位置與偵測事件；另一方面亦透過Foxglove
+								Studio接收即時資料流，進行偵測紀錄對時、標註與危險事件視覺化。當系統判定事件達到特定危險等級時，亦會自動發送警報電子郵件予維運人員，以支援後續之應變與決策。</h5>
 							</section>
 							<section class="matrix-section">
+								<h1 class="section-title">危險事件分級矩陣</br> 不僅是偵測，更是智慧的決策</h1>
 								<div class="two-col-layout">
 							
 									<!-- 左邊內容（你之後可以放圖片或段落） -->
 									<div class="left-content">
-										<h3>Phase 1</h3>
-										<p>內容...</p>
+										<h3>Q1 重要且緊急——事故等級事件</h3>
+										<p class="about-me">定義： 涉及人身安全與火警之重大事故。</br>行動： 即時通報保全與職安單位。</p>
 							
-										<h3>Phase 2</h3>
-										<p>內容...</p>
+										<h3>Q2 重要但不緊急——日常異常與缺失</h3>
+										<p class="about-me">定義： 結構缺失、環境積水等潛在合規風險。</br>行動： 排程發送郵件，列入維修工單。.</p>
 							
-										<h3>Phase 3</h3>
-										<p>內容...</p>
+										<h3>Q3 不重要但緊急——可自行處理之近失事件</h3>
+										<p class="about-me">定義： 暫時性障礙物，可快速排除之事件。</br>行動： 現場人員處理，記錄行為供後續改善。</p>
+
+										<h3>Q4 不重要且不緊急——正常監測情境</h3>
+										<p class="about-me">定義： 環境狀態符合標準。</br> 行動： 轉為巡檢紀錄，供模型訓練使用。</p>
 									</div>
 							
 									<!-- 右邊固定矩陣圖 -->
@@ -112,48 +125,78 @@
 							
 								</div>
 							</section>
+							<section class="comm-section">
 
-					</div>
+								<h2 class="section-title">
+									Communication Pipeline
+									<span>ROS 2 資料流與雲端整合架構</span>
+								</h2>
 
-				<!-- Footer -->
-					<footer id="footer">
-						<section>
-							<form method="post" action="#">
-								<div class="fields">
-									<div class="field">
-										<label for="name">Name</label>
-										<input type="text" name="name" id="name" />
+								<div class="comm-layout">
+
+									<!-- 左側說明 -->
+									<ul class="comm-summary">
+										<li><strong>Input:</strong> LiDAR / IMU / RGB-D → ROS 2 topics</li>
+										<li><strong>Core:</strong> SLAM + YOLO inference on Jetson Orin Nano</li>
+										<li><strong>Control:</strong> /cmd_vel → motor controller, feedback to ROS 2</li>
+										<li><strong>Monitoring:</strong> ROS Bridge → WebSocket → Remote PC/Web dashboard</li>
+										<li>本架構以 Jetson Orin Nano 為 ROS 2 核心，整合感測、導航、YOLO 推論與遠端監看，透過 ROS Bridge 將事件與狀態串流到 Web 端。</li>
+									</ul>
+									
+
+									<!-- 右側通訊圖 -->
+									<div class="comm-diagram">
+										<img src="images/ros2.jpg" alt="ROS2 Communication Architecture">
 									</div>
-									<div class="field">
-										<label for="email">Email</label>
-										<input type="text" name="email" id="email" />
-									</div>
-									<div class="field">
-										<label for="message">Message</label>
-										<textarea name="message" id="message" rows="3"></textarea>
-									</div>
+
 								</div>
-								<ul class="actions">
-									<li><input type="submit" value="Send Message" /></li>
-								</ul>
-							</form>
-					</footer>
 
-				<!-- Copyright -->
-					<div id="copyright">
-						<ul><li>&copy; Untitled</li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul>
+							</section>
+							<section class="deploy-section" id="deployment">
+							
+								<h2 class="deploy-title">
+									實驗場域與巡檢路徑規劃
+								</h2>
+								<h3>
+									PoC小型場域測試
+								</h3>
+							
+								<p class="about-me">
+									本研究第一階段於單室開放式研究室進行測試。空間採開放配置，中央為會議長桌，北側設置沙發區，東側為連續工作桌與儲櫃。通道寬度不一且邊界模糊，適合作為路徑規劃與避障驗證場域。測試期間維持固定人工照明，以確保偵測效能評估的一致性。
+								</p>
+							
+								<figure class="deploy-figure">
+									<img src="images/PoC.png" alt="Deployment environment plan and on-site photos">
+									<figcaption class="deploy-caption">
+										左：空間平面配置與主要巡檢路線（紅色虛線）｜右：現場實景照片
+									</figcaption>
+								</figure>
+							</section>
+							<section class="deploy-section" id="deployment">
+							
+								<h3>
+									正式場域測試：室內工廠環境
+								</h3>
+							
+								<p class="about-me">
+									本場域具備低人流、非連續作業特性，環境包含膠合木箱作業區、龍門吊架與木製夾具。地坪以黃黑警示線劃分走道，並佈置交通錐與碎磚作為導航避障之臨時障礙物，為機器人感測與測試提供理想的驗證空間。
+								</p>
+							
+								<figure class="deploy-figure">
+									<img src="images/正式場域.png" alt="Deployment environment plan and on-site photos">
+									<figcaption class="deploy-caption">
+										左：現場實景照片｜右：空間平面配置與主要巡檢路線（紅色虛線）
+									</figcaption>
+								</figure>
+								<!-- 影片 -->
+								<div class="deploy-video">
+									<iframe src="https://www.youtube.com/embed/zE_J_xlUGyg" title="SAFER-RoBIM Demo" frameborder="0" allowfullscreen>
+									</iframe>
+								</div>
+							
+							</section>
+							
+
 					</div>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
 	</body>
 </html>
