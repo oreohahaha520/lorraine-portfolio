@@ -4846,3 +4846,28 @@ video.fit {
 	margin: 15px 0 5px;
 	/* 可選：拉開距離 */
 }
+
+.matrix-section .inner {
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.two-col-layout {
+	display: grid;
+	grid-template-columns: 0.9fr 1.1fr;
+	gap: 60px;
+	align-items: start;
+}
+
+.right-matrix {
+	position: sticky;
+	top: 100px;
+	/* 根據你的header高度調整 */
+}
+
+.right-matrix img {
+	width: 100%;
+	height: auto;
+	display: block;
+	border-radius: 12px;
+}
