@@ -4736,3 +4736,64 @@ ul.actions.special {
 	margin-top: 0.5rem;
 	margin-bottom: 0.8rem;
 }
+
+.intro {
+	font-size: 1.3rem;
+	line-height: 1.8;
+	font-family: "Noto Sans TC", Georgia;
+	font-weight: 300;
+	letter-spacing: 0.03em;
+	font-style: normal;
+	margin: 0.8rem 0;
+	color: #3d3c3c;
+}
+
+.intro-en {
+	font-size: 1rem;
+	line-height: 1.8;
+	font-family: "Noto Sans TC", Georgia;
+	font-weight: 400;
+	letter-spacing: 0.03em;
+	font-style: normal;
+	margin: 0.8rem 0;
+	color: #797272;
+}
+
+video.fit {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.resume-preview img {
+	max-height: 600px;
+	width: auto;
+	display: block;
+	margin: 0 auto;
+}
+
+.button.large {
+	margin-top: auto
+}
+
+/* 讓 posts 的每個 article 同高（同一列會齊平） */
+.posts {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.posts>article {
+	display: flex;
+	flex-direction: column;
+}
+
+/* 把按鈕區推到底 */
+.posts>article .actions {
+	margin-top: auto;
+}
+
+/* 把 actions 自己的上下空隙統一（避免左右差一點點） */
+.posts>article .actions.special {
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
