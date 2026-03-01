@@ -1,0 +1,179 @@
+<!DOCTYPE HTML>
+<!--
+	Massively by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Generic Page - Massively by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/4.1.13/lib.min.js">
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+					</header>
+
+				<!-- Nav -->
+					<nav id="nav">
+						<ul class="links">
+							<li><a href="index.html">About Me</a></li>
+							<li><a href="generic.html">Master Thesis</a></li>
+							<li class="active"><a href="aps.html">Cross-Team Collaboration Project</a></li>
+							<li><a href="elements.html">Elements Reference</a></li>
+						</ul>
+						<ul class="icons">
+							<li><a href="#" class="icon brands fa-github"><span class="label">GitHub</span></a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+
+						<!-- Post -->
+							<section class="post">
+								<header class="major">
+									<span class="date">Master Thesis</span>
+									<h1>02</h1>
+									<h2>互動式BIM數位孿生平台</h2>
+
+								</header>
+								<blockquote>
+									<p>Autodesk Platform Services（APS）為 Autodesk 提供之雲端 API 平台，支援開發者在網頁環境中整合 BIM 與工程資料。本專案建構一套數位孿生儀表系統，整合 BIM 模型、即時 IoT
+									資料與系統級分析功能。系統採用 APS Viewer 進行三維視覺化，透過 OAuth 驗證機制確保資料安全，並開發自訂 UI Extension 以呈現動態能源與 ESG 指標，將靜態建築模型轉化為可運作之決策支援平台。
+									</p>
+								</blockquote>
+								<div class="about-me">
+									<p>本計劃以建築系館為示範場域，目標建立一套整合「靜態建築碳排」與「動態人流活動碳排」的校園碳排分析平臺。透過跨領域合作，整合BIM建模、影像辨識人流感知、機器學習預測模型與碳排計算機制，最終於APS平台上建構碳排視覺話與熱點分析系統。
+									</p>
+									<p>本專案中，我負責 APS（Autodesk Platform Services）數位孿生平台之開發與整合，將建築碳排數據與人流活動碳排數據串接至雲端 API，建構三維碳排視覺化介面。平台實作內容包含：</p>
+									<ul class="role-list">
+										<li>建立 APS Viewer 與 BIM 模型整合架構</li>
+										<li>設計資料格式轉換機制，使靜態與動態碳排數據可映射至模型元素</li>
+										<li>開發熱力圖與建築元素著色邏輯</li>
+										<li>建構前端資料互動與查詢功能</li>
+										<li>串接後端資料庫以實現即時更新</li>
+									</ul>
+								</div>
+
+								<div class="three-grid-container">
+									<div class="grid-item2">
+										<h1 class="item-title">Data Sources</h1>
+									
+										<div class="tech-stack-header">建築與碳排模型</div>
+										<ul class="data-list">
+											<li><strong>BIM 模型：</strong>整合樓層/房間/構件及靜態碳排屬性（Embodied / Operational）。</li>
+											<li><strong>Carbon Model：</strong>結合靜態能耗與動態人流，計算時空標記排放量。</li>
+										</ul>
+									
+										<div class="tech-stack-header">感知與預測流水線</div>
+										<ul class="data-list">
+											<li><strong>CV Pipeline：</strong>多攝影機偵測與追蹤去重，產出人流計數與時序資料。</li>
+											<li><strong>ML Pipeline：</strong>基於時間序列預測活動類型、未來趨勢與情境分析。</li>
+										</ul>
+									</div>
+								
+									<div class="grid-item2">
+										<h1 class="item-title">Backend Integration Layer</h1>
+									
+										<div class="tech-stack-header">數據規範與映射</div>
+										<ul class="data-list">
+											<li><strong>建立統一資料Schema：</strong>定義時間戳、空間 ID、排放量、類別及信心值。</li>
+											<li><strong>Mapping 機制：</strong>建立空間 ID 與 BIM 構件（db_key/element_id）的映射表。</li>
+										</ul>
+									
+										<div class="tech-stack-header">資料交換架構</div>
+										<ul class="data-list">
+											<li><strong>RESTful API（目標）：</strong>依碳排/減碳量尺度自動渲染構件顏色。</li>
+											<li><strong>即時通訊機制（目標）：</strong>整合 WebSocket 或長輪詢實現數據即時更新。</li>
+										</ul>
+									</div>
+									<div class="grid-item2">
+										<h1 class="item-title">APS Visualization</h1>
+									
+										<div class="tech-stack-header">平台核心整合</div>
+										<ul class="data-list">
+											<li><strong>BIM 整合：</strong>基於 SVF2 格式載入，實現精確三維瀏覽。</li>
+											<li><strong>資料映射：</strong>透過 dbId / externalId 將碳排數據精準 join 至模型構件。</li>
+										</ul>
+						
+										<div class="tech-stack-header">雙重視覺化模式</div>
+										<ul class="data-list">
+											<li><strong>構件著色 (Coloring)：</strong>依碳排/減碳量尺度自動渲染構件顏色。</li>
+											<li><strong>動態熱點 (Heatmap)：</strong>人流與活動碳排時空分布圖，支援多維度切換。</li>
+										</ul>
+									</div>
+
+								</div>
+
+								<h2 class="section-title">BIM Modeling</h2>
+								<video width="100%" autoplay loop muted playsinline>
+									<source src="images/output_compressed.mp4" type="video/mp4">
+								</video>
+									<a href="https://autode.sk/4lazJ0g" target="_blank">
+											<div style="border:1px solid #ddd; padding:10px;">
+											<strong>雲端查看完整模型👉</strong>  https://autode.sk/4lazJ0g</div>
+									</a>
+							<section class="demo-section">
+								<div class="demo-header">
+									<h2 class="section-title">APS 數位孿生DEMO</h2>
+								</div>
+							
+							<div class="three-grid-container">
+								<div class="grid-item2">
+									<h1 class="item-title">Multimodal Data Sensing</h1>
+									<div class="tech-stack-header">邊緣感知與能源監測</div>
+									<ul class="data-list">
+										<li><strong>CCTV Real-time Stream：</strong>整合場域監控影像，提供各空間即時影像串流 (Streaming) 以供狀態比對。</li>
+										<li><strong>Smart Metering：</strong>接入智慧電表數據，獲取電力能耗、電壓與瞬時功率，作為動態碳排計算之基底。</li>
+										<li><strong>人流定位：</strong>結合 CV 與定位技術，輸出人員空間座標與活動強度資料。</li>
+									</ul>
+								</div>
+							
+								<div class="grid-item2">
+									<h1 class="item-title">Backend & Data Hub</h1>
+									<div class="tech-stack-header">數據規範與映射機制</div>
+									<ul class="data-list">
+										<li><strong>統一 Schema 設計：</strong>標準化時間戳、空間 ID、能耗數據與人流信心值之資料封裝。</li>
+										<li><strong>APS 雙向映射：</strong>建立電表/攝影機與 BIM 構件（ExternalId）的關聯表，確保數據精準映射至 3D 元素。</li>
+										<li><strong>即時通訊層：</strong>透過 WebSocket 同步回傳分析數據，驅動模型實現毫秒級狀態反應。</li>
+									</ul>
+								</div>
+							
+								<div class="grid-item2">
+									<h1 class="item-title">APS UI/UX Extensions</h1>
+									<div class="tech-stack-header">智慧延伸模組開發</div>
+									<ul class="data-list">
+										<li><strong>Custom Docking Panels：</strong>參考 Autodesk APS Extensions，開發自定義面板以承載 CCTV 串流視窗與能耗圖表。</li>
+										<li><strong>熱力圖與狀態渲染：</strong>基於即時數據驅動 Shader，在模型表面渲染動態熱力圖與構件著色 (Theming Color)。</li>
+										<li><strong>智慧聯動機制：</strong>點擊 BIM 構件可立即調用該空間之實時影像與電力曲線，實現資訊與模型的深度耦合。</li>
+									</ul>
+								</div>
+							</div>
+
+								<div class="video-container">
+									<div class="video-browser-bar">
+										<span class="dot red"></span>
+										<span class="dot yellow"></span>
+										<span class="dot green"></span>
+										<span class="url-bar">http://localhost:3000/</span>
+									</div>
+									<video controls autoplay muted loop class="demo-video">
+										<source src="/images/APSDemo_0115.mp4" type="video/mp4">
+										您的瀏覽器不支援影片播放。
+									</video>
+								</div>
+						
+							
+
+					</div>
+	</body>
+</html>

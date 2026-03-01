@@ -5015,3 +5015,163 @@ video.fit {
 	height: 100%;
 	border-radius: 16px;
 }
+
+/* 容器：確保三等分且等高 */
+.three-grid-container {
+	display: grid;
+	/* 固定三欄，每欄佔 1 份剩餘空間 */
+	grid-template-columns: repeat(3, 1fr);
+	/* 關鍵：讓所有子項目高度強制同步 */
+	align-items: stretch;
+	gap: 0;
+	/* 讓中間的分割線看起來像連在一起 */
+	max-width: 1200px;
+	margin: 50px auto;
+	background: #ffffff;
+	border: 1px solid #eee;
+	border-radius: 12px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+	overflow: hidden;
+}
+
+/* 項目樣式 */
+.grid-item2 {
+	padding: 40px 30px;
+	display: flex;
+	flex-direction: column;
+	/* 文字內容靠左對齊 */
+	align-items: flex-start;
+	justify-content: flex-start;
+	background: #fff;
+	position: relative;
+}
+
+/* 垂直分割線：使用 border-right 代替偽元素更穩定 */
+.grid-item2:not(:last-child) {
+	border-right: 1px solid #eee;
+}
+
+/* 標題對齊 */
+.item-title {
+	min-height: 3.6rem;
+	display: flex;
+	width: 100%;
+	text-align: left;
+	font-size: 1.4rem;
+	color: #1a1a1a;
+	margin: 0 0 20px 0;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+
+/* 藍色小標籤 */
+.tech-stack-header {
+	display: inline-block;
+	background: #f0f7ff;
+	color: #007bff;
+	font-size: 0.85rem;
+	font-weight: 700;
+	padding: 4px 12px;
+	border-radius: 4px;
+	margin: 20px 0 12px 0;
+}
+
+/* 清單內容 */
+.data-list {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+}
+
+.data-list li {
+	font-size: 0.9rem;
+	line-height: 1.7;
+	color: #555;
+	margin-bottom: 12px;
+	padding-left: 15px;
+	position: relative;
+}
+
+.data-list li::before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #007bff;
+	font-weight: bold;
+}
+
+.demo-section {
+	max-width: 1100px;
+	margin: 60px auto;
+	text-align: center;
+}
+
+.demo-header h1 {
+	font-size: 2.2rem;
+	color: #1a1a1a;
+	margin-bottom: 10px;
+}
+
+.demo-header p {
+	color: #666;
+	margin-bottom: 40px;
+}
+
+/* 模擬瀏覽器外殼 */
+.video-container {
+	background: #fff;
+	border-radius: 12px;
+	box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+	overflow: hidden;
+	border: 1px solid #ddd;
+	margin-bottom: 50px;
+}
+
+.video-browser-bar {
+	background: #f1f1f1;
+	padding: 10px 15px;
+	display: flex;
+	align-items: center;
+	border-bottom: 1px solid #ddd;
+}
+
+.dot {
+	height: 12px;
+	width: 12px;
+	border-radius: 50%;
+	margin-right: 8px;
+	display: inline-block;
+}
+
+.red {
+	background: #ff5f56;
+}
+
+.yellow {
+	background: #ffbd2e;
+}
+
+.green {
+	background: #27c93f;
+}
+
+.url-bar {
+	background: #fff;
+	flex-grow: 1;
+	margin-left: 20px;
+	border-radius: 4px;
+	font-size: 12px;
+	color: #999;
+	padding: 4px 10px;
+	text-align: left;
+}
+
+.demo-video {
+	width: 100%;
+	display: block;
+	aspect-ratio: 16 / 9;
+	/* 保持標準寬螢幕比例 */
+	background: #000;
+}
