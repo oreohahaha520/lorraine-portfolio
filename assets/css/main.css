@@ -5092,6 +5092,7 @@ video.fit {
 	margin-bottom: 12px;
 	padding-left: 15px;
 	position: relative;
+	
 }
 
 .data-list li::before {
@@ -5100,12 +5101,15 @@ video.fit {
 	left: 0;
 	color: #007bff;
 	font-weight: bold;
+	text-align: justify;
+	text-align: left;
 }
 
 .demo-section {
 	max-width: 1100px;
 	margin: 60px auto;
-	text-align: center;
+	text-align: left;
+	text-align: justify
 }
 
 .demo-header h1 {
@@ -5174,4 +5178,62 @@ video.fit {
 	aspect-ratio: 16 / 9;
 	/* 保持標準寬螢幕比例 */
 	background: #000;
+}
+
+.video-grid-section {
+	max-width: 1100px;
+	margin: 60px auto;
+	padding: 0 20px;
+}
+
+.video-grid-container {
+	display: grid;
+	/* 強制三等分 */
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	align-items: stretch;
+	/* 確保三個區塊等高 */
+}
+
+.video-item {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+
+/* 影片容器：確保所有影片比例相同 */
+.video-wrapper {
+	width: 100%;
+	aspect-ratio: 16 / 9;
+	background: #000;
+	border-radius: 8px;
+	overflow: hidden;
+	margin-bottom: 15px;
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.video-wrapper video {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	/* 確保影片填滿容器不留黑邊 */
+}
+
+/* H5 文字樣式：實現左右兩端對齊 */
+.video-desc {
+	font-size: 0.95rem;
+	color: #444;
+	line-height: 1.6;
+	margin: 0;
+	text-align: justify;
+	/* 左右對齊 */
+	text-justify: inter-word;
+	font-weight: 500;
+}
+
+/* 響應式：手機版變垂直排列 */
+@media (max-width: 768px) {
+	.video-grid-container {
+		grid-template-columns: 1fr;
+	}
 }
